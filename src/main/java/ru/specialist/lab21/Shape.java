@@ -1,4 +1,4 @@
-package ru.specialist.lab11;
+package ru.specialist.lab21;
 
 public abstract class Shape {
     String color;

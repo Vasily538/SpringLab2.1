@@ -1,5 +1,11 @@
-package ru.specialist.lab11;
+package ru.specialist.lab21;
 
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
+
+@Component("coords")
+@Scope("prototype")
 public class Coords {
     private int x;
     private int y;

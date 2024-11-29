@@ -1,12 +1,20 @@
-package ru.specialist.lab11;
+package ru.specialist.lab21;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
+
+@Component
+@Scope("prototype")
 public class Point extends Shape {
     private Coords coords;
 
     public void draw() {
-        System.out.println(String.format("Drawing %s",this));
+        System.out.println(String.format("Drawing %s", this));
     }
 
+    @Autowired
     public Point(Coords coords) {
         this.coords = coords;
     }
@@ -19,10 +27,12 @@ public class Point extends Shape {
         return coords.getY();
     }
 
+    @Value("${point.x}")
     public void setX(int x) {
         coords.setX(x);
     }
 
+    @Value("${point.y}")
     public void setY(int y) {
         coords.setY(y);
     }

@@ -1,10 +1,16 @@
-package ru.specialist.lab11;
+package ru.specialist.lab21;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
-
+@Component
+@Scope("singleton")
 public class Scene {
-    private List<Shape> objects;
 
+    private List<Shape> objects;
+    @Autowired
     public Scene(List<Shape> objects) {
         this.objects = objects;
     }
